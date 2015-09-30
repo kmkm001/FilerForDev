@@ -44,13 +44,13 @@ namespace FilerForDev
 		/// <param name="e"></param>
 		private void notifyIcon_MouseClick(object sender, System.Windows.Forms.MouseEventArgs e)
 		{
+			// Run only when the left-clicked. 
 			if (e.Button == System.Windows.Forms.MouseButtons.Left)
 			{
 				// Show or hide MainWindow.
 				this.operateMainWindowsVisible();
 			}
 		}
-
 
 		/// <summary>
 		/// Event of clicked ContextMenu "Settings".
@@ -68,22 +68,9 @@ namespace FilerForDev
 		/// <param name="e"></param>
 		private void toolStripMenuItem_About_Click(object sender, EventArgs e)
 		{
-			// Get my assembly.
-			System.Reflection.Assembly asm =
-				System.Reflection.Assembly.GetExecutingAssembly();
-
-			// Get product name.
-			string name = asm.GetName().Name;
-			
-			// Get product version.
-			System.Version version = asm.GetName().Version;
-	
-			// Show.
-			System.Windows.MessageBox.Show(
-				"Product Info \n" +
-				"Name	: " + name + "\n" +
-				"Version	: " + version.ToString() + "\n"
-				);
+			// Create and, show VersionInfoWindow.
+			VersionInfoWindow verInfoWnd = new VersionInfoWindow();
+			verInfoWnd.Show();
 		}
 
 		/// <summary>
