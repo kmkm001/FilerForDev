@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+﻿
 namespace VersionInformation
 {
 	class VersionInfo
@@ -28,7 +23,7 @@ namespace VersionInformation
 		}
 
 		/// <summary>
-		/// 
+		/// Get file version information.
 		/// </summary>
 		/// <param name="infoNum"></param>
 		/// <returns></returns>
@@ -52,7 +47,6 @@ namespace VersionInformation
 		{
 			string ret = "";
 
-			/* 引数InfoNumに対応したバージョン情報を取得 */
 			switch (infoNum)
 			{
 				case VerInfo.COMMENTS:
